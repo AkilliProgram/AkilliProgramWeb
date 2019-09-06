@@ -24,16 +24,15 @@
 
             <!-- Modal static-->
             <button type="button" style="margin-right: inherit" class="btn btn-primary waves-effect"
-                data-toggle="modal" data-target="#Modal-ekle"><i class="zmdi zmdi-plus-circle-o"></i></button>
+                data-toggle="modal" data-target="#Modal-ekle" data-toggle="tooltip" data-placement="bottom" title="Stok Kartı Ekle"><i class="zmdi zmdi-plus-circle-o"></i></button>
                 <button style="margin-right: inherit" type="button" class="btn btn-success waves-effect"
-                data-toggle="modal" data-target="#Modal-tab"><i
-                    class="zmdi zmdi-minus-circle-outline"></i></button>
+                data-toggle="modal" data-target="#Modal-tab"  data-toggle="tooltip" data-placement="bottom" title="Stok Kartını Sil"><i class="zmdi zmdi-minus-circle-outline"></i></button>
             <button style="margin-right: inherit" type="button" class="btn btn-info waves-effect"
-                data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-edit"></i></button>
+                data-toggle="modal" data-target="#Modal-tab" data-toggle="tooltip" data-placement="bottom" title="Stok Kartını Düzenle" ><i class="zmdi zmdi-edit"></i></button>
             <button style="margin-right: inherit" type="button" class="btn btn-warning waves-effect"
-                data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-refresh"></i></button>
+                data-toggle="modal" data-target="#Modal-tab" data-toggle="tooltip" data-placement="bottom" title="Tabloyu Yenile"><i class="zmdi zmdi-refresh"></i></button>
             <button style="margin-right: inherit" type="button" class="btn btn-danger waves-effect"
-                data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-print"></i></button>
+                data-toggle="modal" data-target="#Modal-tab" data-toggle="tooltip" data-placement="bottom" title="Tabloyu Yazdır"><i class="zmdi zmdi-print"></i></button>
 
             <div class="col-xs-12 col-sm-12 col-md-3" style="margin: auto; margin-right: initial">
                 <div id="colum-rendr_filter" class="dataTables_filter"><label><input type="search"
@@ -137,7 +136,7 @@
                                             <button class="btn btn-primary btn-outline-primary btn-icon" type="button"
                                                 data-toggle="collapse" data-target="#collapseDetay" target="_top" aria-expanded="true"
                                                 aria-controls="collapseExample">
-                                                <i class="zmdi zmdi-caret-down-circle"></i>
+                                                <i class="zmdi zmdi-caret-down" style="font-size:36px; margin: 0 !important;"></i>
                                             </button>
                                             <div class="collapse" id="collapseDetay">
                                                     <!-- #region Tabs-->
@@ -147,7 +146,7 @@
                                                                 href="#tab-barkod" role="tab">Barkod</a>
                                                         </li>
  -->                                                    <li class="nav-item">
-                                                            <a class="nav-link" data-toggle="tab" href="#tab-miktar"
+                                                            <a class="nav-link active" data-toggle="tab" href="#tab-miktar"
                                                                 role="tab">Miktar</a>
                                                         </li>
                                                         <li class="nav-item">
@@ -200,7 +199,7 @@
                                                             <button type="button" class="btn btn-primary btn-block">Tüm
                                                                 Barkodlar</button>
                                                         </div> -->
-                                                        <div class="tab-pane" id="tab-miktar" role="tabpanel">
+                                                        <div class="tab-pane active" id="tab-miktar" role="tabpanel">
                                                             <div class="row">
                                                                 <label
                                                                     class="col-sm-4 col-lg-2 col-form-label">Birim</label>
@@ -219,6 +218,8 @@
                                                                     </select>
  -->                                                                </div>
                                                             </div>
+
+                                                            <br/>
 
 
                                                             <div class="row">
