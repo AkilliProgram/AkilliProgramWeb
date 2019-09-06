@@ -1,0 +1,401 @@
+<app-navbar></app-navbar>
+
+
+
+
+
+
+
+<div class="card col-xs-12 col-sm-12 col-md-9" style="margin-left: 300px;margin-top: 100px;">
+    <div class="card-header"></div>
+    <!--#region top-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-9">
+            <div class="dataTables_length" id="colum-rendr_length"><label><select name="colum-rendr_length"
+                        aria-controls="colum-rendr" class="form-control input-sm">
+                        <option value="10">10</option>
+                        <option value="25">25</option>
+                    </select>Kayıt Göster</label></div>
+        </div>
+    </div>
+
+
+
+    <!--#endregion top-->
+    <div class="card-block">
+        <div class="table-responsive dt-responsive">
+
+            <!-- buttons -->
+            <form [formGroup]="stokgonder" (ngSubmit)="SaveStokKarti(stk_kod.value, stk_adi.value, stk_tip.value)"
+                class="md-float-material" novalidate>
+
+                <div id="basic-btn_wrapper" class="row" style="margin: 1.5% 2.5%">
+
+
+                    <!-- Modal static-->
+                    <button type="button" style="margin-right: inherit" class="btn btn-primary waves-effect"
+                        data-toggle="modal" data-target="#Modal-ekle"><i class="zmdi zmdi-plus-circle-o"></i></button>
+                    <!-- Modal -->
+                    <div class="modal fade modal-flex" id="Modal-ekle" tabindex="-1" role="dialog"
+                        style="z-index: 1050; display: none;" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+
+                                    <div class="card col-xs-12 col-sm-12 col-md-12">
+                                        <div class="m-b-20 m-t-20">
+                                            <h4 class="sub-title">Yeni Stok Kartı</h4>
+
+                                            <div class="row">
+                                                <label class="col-sm-4 col-lg-2 col-form-label">Stok Kodu</label>
+                                                <div class="col-sm-8 col-lg-10">
+                                                    <div class="input-group">
+                                                        <input id="stk_kod" name="stk_kod" formControlName="stk_kod"
+                                                            #stk_kod type="text" class="form-control"
+                                                            placeholder=""> <span class="input-group-addon"
+                                                            id="basic-addon3">>></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <label class="col-sm-4 col-lg-2 col-form-label">Stok Adı</label>
+                                                <div class="col-sm-8 col-lg-10">
+                                                    <div class="input-group">
+                                                        <input id="stk_adi" name="stk_adi" formControlName="stk_adi"
+                                                            #stk_adi type="text"
+                                                            class="form-control form-control" placeholder="">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <label class="col-sm-4 col-lg-2 col-form-label">Stok Tipi</label>
+                                                <div class="col-sm-8 col-lg-10">
+                                                    <select id="stk_tip" name="stk_tip" formControlName="stk_tip"
+                                                        #stk_tip type="number" class="form-control form-control-primary">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+
+                                                        <!--                                                         <option value="1">Malzeme/Ticari Mal</option>
+                                                        <option value="2">Gelir/Gider/Hizmet</option>
+                                                        <option value="3">Demirbaş</option>
+ -->
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <hr />
+
+                                            <button class="btn btn-primary btn-outline-primary btn-icon" type="button"
+                                                data-toggle="collapse" data-target="#collapseDetay" target="_top" aria-expanded="true"
+                                                aria-controls="collapseExample">
+                                                <i class="zmdi zmdi-caret-down-circle"></i>
+                                            </button>
+                                            <div class="collapse" id="collapseDetay">
+                                                    <!-- #region Tabs-->
+                                                    <ul class="nav nav-tabs" role="tablist">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link active" data-toggle="tab"
+                                                                href="#tab-barkod" role="tab">Barkod</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" data-toggle="tab" href="#tab-miktar"
+                                                                role="tab">Miktar</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" data-toggle="tab" href="#tab-ozelkod"
+                                                                role="tab">Özel Kod</a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link" data-toggle="tab"
+                                                                href="#tab-fiyatlandirma" role="tab">Fiyatlandırma</a>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="tab-content modal-body">
+                                                        <div class="tab-pane active" id="tab-barkod" role="tabpanel">
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Barkod
+                                                                    1</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="Yeni Oluştur">
+                                                                        <span class="input-group-addon"
+                                                                            id="basic-addon3">>></span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Barkod
+                                                                    2</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Barkod
+                                                                    3</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <button type="button" class="btn btn-primary btn-block">Tüm
+                                                                Barkodlar</button>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab-miktar" role="tabpanel">
+                                                            <div class="row">
+                                                                <label
+                                                                    class="col-sm-4 col-lg-2 col-form-label">Birim</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <select name="select"
+                                                                        class="form-control form-control-primary">
+                                                                        <option value="1">Malzeme/Ticari Mal</option>
+                                                                        <option value="2">Gelir/Gider/Hizmet</option>
+                                                                        <option value="3">Demirbaş</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Asgari
+                                                                    Miktar</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control-number"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Azami
+                                                                    Miktar</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control-number"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab-ozelkod" role="tabpanel">
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Özel Kod
+                                                                    1</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Özel Kod
+                                                                    2</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Özel Kod
+                                                                    3</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Özel Kod
+                                                                    4</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Özel Kod
+                                                                    5</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text"
+                                                                            class="form-control form-control"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="tab-pane" id="tab-fiyatlandirma" role="tabpanel">
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Alış KDV
+                                                                    Oranı</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input type="text" class="form-control"
+                                                                            style="text-align: right">
+                                                                        <span class="input-group-addon"
+                                                                            id="basic-addon3">%</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label">Alış
+                                                                    Fiyatı</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="text" class="form-control-number"
+                                                                        placeholder="Alış Fiyatı 1">
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <input type="text" class="form-control-number"
+                                                                        placeholder="Alış Fiyatı 2">
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group row">
+                                                                <label class="col-sm-2 col-form-label">Satış
+                                                                    Fiyatı</label>
+                                                                <div class="col-sm-3">
+                                                                    <input type="text" class="form-control-number"
+                                                                        placeholder="Satış Fiyatı 1">
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <input type="text" class="form-control-number"
+                                                                        placeholder="Satış Fiyatı 2">
+                                                                </div>
+                                                                <div class="col-sm-3">
+                                                                    <input type="text" class="form-control-number"
+                                                                        placeholder="Satış Fiyatı 3">
+                                                                </div>
+                                                            </div>
+
+
+
+
+                                                        </div>
+                                                    </div>
+                                                    <!-- #endregion Tabs-->
+
+
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="submit"
+                                        class="btn btn-primary btn-md btn-danger waves-effect text-center m-b-20">Kaydet</button>
+                                    <button type="button" data-dismiss="modal"
+                                        class=" btn btn-primary btn-md btn-warning waves-effect text-center m-b-20">Vazgeç</button>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <button style="margin-right: inherit" type="button" class="btn btn-success waves-effect"
+                        data-toggle="modal" data-target="#Modal-tab"><i
+                            class="zmdi zmdi-minus-circle-outline"></i></button>
+                    <button style="margin-right: inherit" type="button" class="btn btn-info waves-effect"
+                        data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-edit"></i></button>
+                    <button style="margin-right: inherit" type="button" class="btn btn-warning waves-effect"
+                        data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-refresh"></i></button>
+                    <button style="margin-right: inherit" type="button" class="btn btn-danger waves-effect"
+                        data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-print"></i></button>
+
+                    <div class="col-xs-12 col-sm-12 col-md-3" style="margin: auto; margin-right: initial">
+                        <div id="colum-rendr_filter" class="dataTables_filter"><label><input type="search"
+                                    class="form-control input-sm" placeholder="" aria-controls="colum-rendr"></label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+
+            <table id="colum-rendr" class="table table-striped table-bordered table-hover nowrap dataTable" role="grid"
+                aria-describedby="colum-rendr_info" style="color: black">
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>rec_id</td>
+                        <td>stk_kod</td>
+                        <td>stk_adi</td>
+                        <td>stk_tip</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr class="odd" *ngFor="let item of stokListe">
+                        <td class="sorting_1">
+                            <!--            <button type="button" class="btn btn-primary btn-md waves-effect text-center" (click)="StokKartSec(item.rec_id)">Değiş</button> -->
+                        </td>
+                        <td>{{item.rec_id}}</td>
+                        <td>{{item.stk_kod}}</td>
+                        <td>{{item.stk_adi}}</td>
+                        <td>{{item.stk_tip}}</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--#region bottom-->
+    <div class="row" style="margin:1%">
+        <div class="col-xs-12 col-sm-12 col-md-5">
+            <div class="dataTables_info" id="colum-rendr_info" role="status" aria-live="polite">Showing 1 to
+                10 of 20 entries</div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="colum-rendr_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button page-item previous disabled" id="colum-rendr_previous"><a href="#"
+                            aria-controls="colum-rendr" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                    </li>
+                    <li class="paginate_button page-item active"><a href="#" aria-controls="colum-rendr" data-dt-idx="1"
+                            tabindex="0" class="page-link">1</a></li>
+                    <li class="paginate_button page-item "><a href="#" aria-controls="colum-rendr" data-dt-idx="2"
+                            tabindex="0" class="page-link">2</a></li>
+                    <li class="paginate_button page-item next" id="colum-rendr_next"><a href="#"
+                            aria-controls="colum-rendr" data-dt-idx="3" tabindex="0" class="page-link">Next</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--#endregion bottom-->
+
+
+</div>

@@ -1,0 +1,11 @@
+
+.button-container{
+    height: auto;
+    margin: 1%;
+}
+.card-buttons{
+    float: left;
+    width: 10%;
+    margin: 1px;
+
+}

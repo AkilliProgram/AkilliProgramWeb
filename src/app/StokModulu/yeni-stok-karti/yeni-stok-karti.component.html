@@ -1,0 +1,477 @@
+<app-navbar></app-navbar>
+<div class="card col-xs-12 col-sm-12 col-md-9" style="margin-left: 300px;margin-top: 100px;">
+    <!--#region CARİ HESAP KARTI-->
+    <div class="m-b-20">
+        <h4 class="sub-title">Yeni Stok Kartı</h4>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Stok Kodu</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-uppercase" placeholder="Yeni Oluştur">
+                    <span class="input-group-addon" id="basic-addon3">>></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">Stok Adı</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-uppercase" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <label class="col-sm-4 col-lg-2 col-form-label">İlgili Kişi</label>
+            <div class="col-sm-8 col-lg-10">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-uppercase" placeholder="">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row has-success">
+            <label class="col-sm-2">Hesap Türü</label>
+            <div class="col-sm-10">
+
+                <div class="checkbox-fade fade-in-warning">
+                    <label>
+                        <input type="checkbox" id="checkbox" name="Accounttype" value="Musteri">
+                        <span class="cr">
+                            <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                        </span>
+                        <span>Müşteri</span>
+                    </label>
+                </div>
+
+                <div class="checkbox-fade fade-in-success">
+                    <label>
+                        <input type="checkbox" id="checkbox2" name="Accounttype" value="Satici">
+                        <span class="cr">
+                            <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                        </span>
+                        <span>Satıcı</span>
+                    </label>
+                </div>
+
+                <div class="checkbox-fade fade-in-primary">
+                    <label>
+                        <input type="checkbox" id="checkbox3" name="Accounttype" value="Diger">
+                        <span class="cr">
+                            <i class="cr-icon icofont icofont-ui-check txt-primary"></i>
+                        </span>
+                        <span>Diğer</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- #region Tabs -->
+        <div class="col-lg-12 col-xl-12">
+            <div class="sub-title"></div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs  tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#anabilgi" role="tab" aria-expanded="false">Ana
+                        Bilgi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#aciklamalar" role="tab"
+                        aria-expanded="false">Açıklamalar</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#kefiller" role="tab" aria-expanded="false">Kefiller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#banka" role="tab" aria-expanded="false">Banka</a>
+                </li>
+            </ul>
+
+            <div class="tab-content tabs card-block">
+
+                <!-- #region Ana Bilgiler-->
+
+                <div class="tab-pane active" id="anabilgi" role="tabpanel" aria-expanded="false">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Adres</label>
+                        <div class="col-sm-10">
+                            <textarea rows="5" cols="5" class="form-control form-control-uppercase"
+                                placeholder=""></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">İlçe</label>
+                        <div class="col-sm-4">
+                            <select name="select" class="form-control form-control-primary">
+                                <option value="opt1">Seçiniz</option>
+                                <option value="opt2">Type 2</option>
+                                <option value="opt3">Type 3</option>
+                                <option value="opt4">Type 4</option>
+                                <option value="opt5">Type 5</option>
+                                <option value="opt6">Type 6</option>
+                                <option value="opt7">Type 7</option>
+                                <option value="opt8">Type 8</option>
+                            </select>
+                        </div>
+                        <label class="col-sm-2 col-form-label">İl</label>
+                        <div class="col-sm-4">
+                            <select name="select" class="form-control form-control-primary">
+                                <option value="opt1">Seçiniz</option>
+                                <option value="opt2">Type 2</option>
+                                <option value="opt3">Type 3</option>
+                                <option value="opt4">Type 4</option>
+                                <option value="opt5">Type 5</option>
+                                <option value="opt6">Type 6</option>
+                                <option value="opt7">Type 7</option>
+                                <option value="opt8">Type 8</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Vergi Dairesi</label>
+                        <div class="col-sm-8 col-lg-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-uppercase">
+                            </div>
+                        </div>
+                        <label class="col-sm-2 col-form-label">Vergi Numarası</label>
+                        <div class="col-sm-8 col-lg-4">
+                            <div class="input-group">
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">E-posta Adresi</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Geçerli bir e-posta adresi giriniz.">
+                            <span class="messages"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Sabit Telefon</label>
+                        <div class="col-sm-5">
+                            <input type="tel" class="form-control us_telephone" data-mask="(999) 999-9999">
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="tel" class="form-control us_telephone" data-mask="(999) 999-9999">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Cep Telefonu</label>
+                        <div class="col-sm-5">
+                            <input type="tel" class="form-control us_telephone" data-mask="(999) 999-9999">
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="tel" class="form-control us_telephone" data-mask="(999) 999-9999">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Faks</label>
+                        <div class="col-sm-5">
+                            <input type="tel" class="form-control us_telephone" data-mask="(999) 999-9999">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Özel Kod</label>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control form-control-uppercase">
+                        </div>
+                        <div class="col-sm-5">
+                            <input type="text" class="form-control form-control-uppercase">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-4 col-lg-2 col-form-label">Vekil 1</label>
+                        <div class="col-sm-8 col-lg-10">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-uppercase">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <label class="col-sm-4 col-lg-2 col-form-label">Vekil 2</label>
+                        <div class="col-sm-8 col-lg-10">
+                            <div class="input-group">
+                                <input type="text" class="form-control form-control-uppercase">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- #endregion -->
+                <!-- #region Açıklamalar -->
+
+                <div class="tab-pane" id="aciklamalar" role="tabpanel" aria-expanded="false">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <textarea rows="8" cols="5" class="form-control" placeholder=""></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- #endregion -->
+                <!-- #region Kefiller -->
+
+
+                <div class="tab-pane" id="kefiller" role="tabpanel" aria-expanded="false">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-header-right">
+                                <ul class="list-unstyled card-option" style="width: 180px;">
+                                    <li><i class="icofont icofont-simple-left icofont-simple-right"></i>
+                                    </li>
+                                    <li><i class="icofont icofont-maximize full-card"></i>
+                                    </li>
+                                    <li><i class="icofont icofont-minus minimize-card"></i>
+                                    </li>
+                                    <li><i class="icofont icofont-refresh reload-card"></i>
+                                    </li>
+                                    <li><i class="icofont icofont-error close-card"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card-block table-border-style">
+                            <div class="table-responsive">
+                                <table class="table table-styling">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>AD SOYAD</th>
+                                            <th>SABİT TELEFON</th>
+                                            <th>CEP TELEFONU</th>
+                                            <th>E-POSTA</th>
+                                            <th>İŞYERİ ADI</th>
+                                            <th>ADRES 1</th>
+                                            <th>ADRES 2</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>JOHN DOE</td>
+                                            <td>12345678901</td>
+                                            <td>12345678901</td>
+                                            <td>netbilisim@netbilisim.com</td>
+                                            <td>NET BİLİŞİM</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>JOHN DOE</td>
+                                            <td>12345678901</td>
+                                            <td>12345678901</td>
+                                            <td>netbilisim@netbilisim.com</td>
+                                            <td>NET BİLİŞİM</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>JOHN DOE</td>
+                                            <td>12345678901</td>
+                                            <td>12345678901</td>
+                                            <td>netbilisim@netbilisim.com</td>
+                                            <td>NET BİLİŞİM</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4</th>
+                                            <td>JOHN DOE</td>
+                                            <td>12345678901</td>
+                                            <td>12345678901</td>
+                                            <td>netbilisim@netbilisim.com</td>
+                                            <td>NET BİLİŞİM</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5</th>
+                                            <td>JOHN DOE</td>
+                                            <td>12345678901</td>
+                                            <td>12345678901</td>
+                                            <td>netbilisim@netbilisim.com</td>
+                                            <td>NET BİLİŞİM</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                    <tfoot class="table-info">
+                                        <tr>
+                                            <th scope="row">#</th>
+                                            <td>JOHN DOE</td>
+                                            <td>12345678901</td>
+                                            <td>12345678901</td>
+                                            <td>netbilisim@netbilisim.com</td>
+                                            <td>NET BİLİŞİM</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                            <td>Reşatbey Mah. 62006 Sok. No: 14 Kâmil
+                                                Usta Apt. K: Z D: 1 Seyhan/Adana</td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- #endregion -->
+                <!-- #region Banka -->
+
+                <div class="tab-pane" id="banka" role="tabpanel" aria-expanded="false">
+                    <div style="border:1px lightblue solid;padding:2%;margin-bottom: 2%">
+                        <div class="m-b-20">
+                            <h4 class="sub-title">Banka 1</h4>
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Banka
+                                    Adı</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Şube
+                                    Adı</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Hesap
+                                    No</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">IBAN</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div style="border:1px lightblue solid;padding:2%;margin-bottom: 2%">
+                        <div class="m-b-20">
+                            <h4 class="sub-title">Banka 2</h4>
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Banka
+                                    Adı</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Şube
+                                    Adı</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">Hesap
+                                    No</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <label class="col-sm-4 col-lg-2 col-form-label">IBAN</label>
+                                <div class="col-sm-8 col-lg-10">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control form-control-uppercase" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- #endregion -->
+
+            </div>
+        </div>
+        <!-- #endregion Tabs -->
+
+        <div class="sub-title"></div>
+
+        <div class="row justify-content-end">
+            <label class="col-sm-4 col-lg-2 col-form-label">Borç Toplamı</label>
+            <div class="col-sm-8 col-lg-5">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-right" placeholder="0,00">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <label class="col-sm-4 col-lg-2 col-form-label">Alacak Toplamı</label>
+            <div class="col-sm-8 col-lg-5">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-right" placeholder="0,00">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <label class="col-sm-4 col-lg-2 col-form-label">Bakiye</label>
+            <div class="col-sm-8 col-lg-5">
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-right" placeholder="0,00">
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-end" style="margin:2%">
+            <button class="btn hor-grd btn-grd-success">Kaydet</button>
+            <button style="margin-left:1%" class="btn hor-grd btn-grd-primary">Vazgeç</button>
+        </div>
+        <!-- #endregion CARİ HESAP KARTI -->
+    </div>
+
