@@ -17,7 +17,36 @@
                         <option value="25">25</option>
                     </select>Kayıt Göster</label></div>
         </div>
+
+
+        <div id="basic-btn_wrapper" class="row col-md-12" style="margin: 1.5% 2.5%">
+
+
+            <!-- Modal static-->
+            <button type="button" style="margin-right: inherit" class="btn btn-primary waves-effect"
+                data-toggle="modal" data-target="#Modal-ekle"><i class="zmdi zmdi-plus-circle-o"></i></button>
+                <button style="margin-right: inherit" type="button" class="btn btn-success waves-effect"
+                data-toggle="modal" data-target="#Modal-tab"><i
+                    class="zmdi zmdi-minus-circle-outline"></i></button>
+            <button style="margin-right: inherit" type="button" class="btn btn-info waves-effect"
+                data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-edit"></i></button>
+            <button style="margin-right: inherit" type="button" class="btn btn-warning waves-effect"
+                data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-refresh"></i></button>
+            <button style="margin-right: inherit" type="button" class="btn btn-danger waves-effect"
+                data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-print"></i></button>
+
+            <div class="col-xs-12 col-sm-12 col-md-3" style="margin: auto; margin-right: initial">
+                <div id="colum-rendr_filter" class="dataTables_filter"><label><input type="search"
+                            class="form-control input-sm" placeholder="" aria-controls="colum-rendr"></label>
+                </div>
+            </div>
+        </div>
+
+
+
+
     </div>
+
 
 
 
@@ -26,15 +55,30 @@
         <div class="table-responsive dt-responsive">
 
             <!-- buttons -->
-            <form [formGroup]="stokgonder" (ngSubmit)="SaveStokKarti(stk_kod.value, stk_adi.value, stk_tip.value)"
+            <form [formGroup]="stokgonder" (ngSubmit)="SaveStokKarti(                
+                                                                        stk_kod.value, 
+                                                                        stk_adi.value, 
+                                                                        stk_tip.value, 
+                                                                        stk_ozel_kod_1.value, 
+                                                                        stk_ozel_kod_2.value, 
+                                                                        stk_ozel_kod_3.value, 
+                                                                        stk_ozel_kod_4.value,
+                                                                        stk_ozel_kod_5.value, 
+                                                                        stk_alis_fiyati_1.value, 
+                                                                        stk_alis_fiyati_2.value, 
+                                                                        stk_satis_fiyati_1.value, 
+                                                                        stk_satis_fiyati_2.value,
+                                                                        stk_satis_fiyati_3.value, 
+                                                                        stk_alis_kdv_orani.value, 
+                                                                        stk_satis_kdv_orani.value, 
+                                                                        stk_otv_kod.value, 
+                                                                        stk_otv_orani.value,
+                                                                        stk_en_az_miktar.value, 
+                                                                        stk_en_cok_miktar.value,
+                                                                        stk_optimum_miktar.value, 
+                                                                        stk_birim_ref.value)"
                 class="md-float-material" novalidate>
 
-                <div id="basic-btn_wrapper" class="row" style="margin: 1.5% 2.5%">
-
-
-                    <!-- Modal static-->
-                    <button type="button" style="margin-right: inherit" class="btn btn-primary waves-effect"
-                        data-toggle="modal" data-target="#Modal-ekle"><i class="zmdi zmdi-plus-circle-o"></i></button>
                     <!-- Modal -->
                     <div class="modal fade modal-flex" id="Modal-ekle" tabindex="-1" role="dialog"
                         style="z-index: 1050; display: none;" aria-hidden="true">
@@ -75,12 +119,12 @@
                                                 <label class="col-sm-4 col-lg-2 col-form-label">Stok Tipi</label>
                                                 <div class="col-sm-8 col-lg-10">
                                                     <select id="stk_tip" name="stk_tip" formControlName="stk_tip"
-                                                        #stk_tip type="number" class="form-control form-control-primary">
+                                                        #stk_tip type="text" class="form-control form-control-primary">
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>
                                                         <option value="3">3</option>
 
-                                                        <!--                                                         <option value="1">Malzeme/Ticari Mal</option>
+                                                        <!--<option value="1">Malzeme/Ticari Mal</option>
                                                         <option value="2">Gelir/Gider/Hizmet</option>
                                                         <option value="3">Demirbaş</option>
  -->
@@ -98,11 +142,11 @@
                                             <div class="collapse" id="collapseDetay">
                                                     <!-- #region Tabs-->
                                                     <ul class="nav nav-tabs" role="tablist">
-                                                        <li class="nav-item">
+<!--                                                         <li class="nav-item">
                                                             <a class="nav-link active" data-toggle="tab"
                                                                 href="#tab-barkod" role="tab">Barkod</a>
                                                         </li>
-                                                        <li class="nav-item">
+ -->                                                    <li class="nav-item">
                                                             <a class="nav-link" data-toggle="tab" href="#tab-miktar"
                                                                 role="tab">Miktar</a>
                                                         </li>
@@ -116,7 +160,7 @@
                                                         </li>
                                                     </ul>
                                                     <div class="tab-content modal-body">
-                                                        <div class="tab-pane active" id="tab-barkod" role="tabpanel">
+                                                        <!-- <div class="tab-pane active" id="tab-barkod" role="tabpanel">
                                                             <div class="row">
                                                                 <label class="col-sm-4 col-lg-2 col-form-label">Barkod
                                                                     1</label>
@@ -155,19 +199,25 @@
                                                             </div>
                                                             <button type="button" class="btn btn-primary btn-block">Tüm
                                                                 Barkodlar</button>
-                                                        </div>
+                                                        </div> -->
                                                         <div class="tab-pane" id="tab-miktar" role="tabpanel">
                                                             <div class="row">
                                                                 <label
                                                                     class="col-sm-4 col-lg-2 col-form-label">Birim</label>
-                                                                <div class="col-sm-8 col-lg-10">
-                                                                    <select name="select"
+                                                                <div class="col-sm-8 col-lg-3">
+                                                                    <select id="stk_birim_ref" name="stk_birim_ref" formControlName="stk_birim_ref"
+                                                                        #stk_birim_ref type="text" class="form-control form-control-primary">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                        <option value="3">3</option>
+                                                                    </select>
+<!--                                                                     <select name="select"
                                                                         class="form-control form-control-primary">
                                                                         <option value="1">Malzeme/Ticari Mal</option>
                                                                         <option value="2">Gelir/Gider/Hizmet</option>
                                                                         <option value="3">Demirbaş</option>
                                                                     </select>
-                                                                </div>
+ -->                                                                </div>
                                                             </div>
 
 
@@ -176,7 +226,7 @@
                                                                     Miktar</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text"
+                                                                        <input id="stk_en_az_miktar" name="stk_en_az_miktar" formControlName="stk_en_az_miktar" #stk_en_az_miktar type="text"
                                                                             class="form-control form-control-number"
                                                                             placeholder="">
                                                                     </div>
@@ -188,12 +238,25 @@
                                                                     Miktar</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text"
+                                                                        <input id="stk_en_cok_miktar" name="stk_en_cok_miktar" formControlName="stk_en_cok_miktar" #stk_en_cok_miktar type="text"
                                                                             class="form-control form-control-number"
                                                                             placeholder="">
                                                                     </div>
                                                                 </div>
                                                             </div>
+
+                                                            <div class="row">
+                                                                <label class="col-sm-4 col-lg-2 col-form-label">Optimum
+                                                                    Miktar</label>
+                                                                <div class="col-sm-8 col-lg-10">
+                                                                    <div class="input-group">
+                                                                        <input id="stk_optimum_miktar" name="stk_optimum_miktar" formControlName="stk_optimum_miktar" #stk_optimum_miktar type="text"
+                                                                            class="form-control form-control-number"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
                                                         </div>
                                                         <div class="tab-pane" id="tab-ozelkod" role="tabpanel">
                                                             <div class="row">
@@ -201,7 +264,7 @@
                                                                     1</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text"
+                                                                        <input id="stk_ozel_kod_1" name="stk_ozel_kod_1" formControlName="stk_ozel_kod_1" #stk_ozel_kod_1 type="text"
                                                                             class="form-control form-control"
                                                                             placeholder="">
                                                                     </div>
@@ -212,7 +275,7 @@
                                                                     2</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text"
+                                                                        <input id="stk_ozel_kod_2" name="stk_ozel_kod_2" formControlName="stk_ozel_kod_2" #stk_ozel_kod_2 type="text"
                                                                             class="form-control form-control"
                                                                             placeholder="">
                                                                     </div>
@@ -223,7 +286,7 @@
                                                                     3</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text"
+                                                                        <input id="stk_ozel_kod_3" name="stk_ozel_kod_3" formControlName="stk_ozel_kod_3" #stk_ozel_kod_3  type="text"
                                                                             class="form-control form-control"
                                                                             placeholder="">
                                                                     </div>
@@ -234,7 +297,7 @@
                                                                     4</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text"
+                                                                        <input id="stk_ozel_kod_4" name="stk_ozel_kod_4" formControlName="stk_ozel_kod_4" #stk_ozel_kod_4 type="text"
                                                                             class="form-control form-control"
                                                                             placeholder="">
                                                                     </div>
@@ -245,7 +308,7 @@
                                                                     5</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text"
+                                                                        <input id="stk_ozel_kod_5" name="stk_ozel_kod_5" formControlName="stk_ozel_kod_5" #stk_ozel_kod_5  type="text"
                                                                             class="form-control form-control"
                                                                             placeholder="">
                                                                     </div>
@@ -258,7 +321,8 @@
                                                                     Oranı</label>
                                                                 <div class="col-sm-8 col-lg-10">
                                                                     <div class="input-group">
-                                                                        <input type="text" class="form-control"
+                                                                        <input id="stk_alis_kdv_orani" name="stk_alis_kdv_orani" formControlName="stk_alis_kdv_orani"
+                                                                        #stk_alis_kdv_orani type="text" class="form-control form-control-number"
                                                                             style="text-align: right">
                                                                         <span class="input-group-addon"
                                                                             id="basic-addon3">%</span>
@@ -270,31 +334,67 @@
                                                                 <label class="col-sm-2 col-form-label">Alış
                                                                     Fiyatı</label>
                                                                 <div class="col-sm-3">
-                                                                    <input type="text" class="form-control-number"
+                                                                    <input id="stk_alis_fiyati_1" name="stk_alis_fiyati_1" formControlName="stk_alis_fiyati_1"
+                                                                    #stk_alis_fiyati_1 type="text" class="form-control-number"
                                                                         placeholder="Alış Fiyatı 1">
                                                                 </div>
                                                                 <div class="col-sm-3">
-                                                                    <input type="text" class="form-control-number"
+                                                                    <input id="stk_alis_fiyati_2" name="stk_alis_fiyati_2" formControlName="stk_alis_fiyati_2"
+                                                                    #stk_alis_fiyati_2 type="text" class="form-control-number"
                                                                         placeholder="Alış Fiyatı 2">
                                                                 </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                    <label class="col-sm-4 col-lg-2 col-form-label">Alış KDV
+                                                                        Oranı</label>
+                                                                    <div class="col-sm-8 col-lg-10">
+                                                                        <div class="input-group">
+                                                                            <input id="stk_satis_kdv_orani" name="stk_satis_kdv_orani" formControlName="stk_satis_kdv_orani"
+                                                                            #stk_satis_kdv_orani type="text" class="form-control form-control-number"
+                                                                                style="text-align: right">
+                                                                            <span class="input-group-addon"
+                                                                                id="basic-addon3">%</span>
+                                                                        </div>
+                                                                    </div>
                                                             </div>
 
                                                             <div class="form-group row">
                                                                 <label class="col-sm-2 col-form-label">Satış
                                                                     Fiyatı</label>
                                                                 <div class="col-sm-3">
-                                                                    <input type="text" class="form-control-number"
+                                                                    <input id="stk_satis_fiyati_1" name="stk_satis_fiyati_1" formControlName="stk_satis_fiyati_1"
+                                                                    #stk_satis_fiyati_1 type="text" class="form-control-number"
                                                                         placeholder="Satış Fiyatı 1">
                                                                 </div>
                                                                 <div class="col-sm-3">
-                                                                    <input type="text" class="form-control-number"
+                                                                    <input id="stk_satis_fiyati_2" name="stk_satis_fiyati_2" formControlName="stk_satis_fiyati_2"
+                                                                    #stk_satis_fiyati_2 type="text" class="form-control-number"
                                                                         placeholder="Satış Fiyatı 2">
                                                                 </div>
                                                                 <div class="col-sm-3">
-                                                                    <input type="text" class="form-control-number"
+                                                                    <input id="stk_satis_fiyati_3" name="stk_satis_fiyati_3" formControlName="stk_satis_fiyati_3"
+                                                                    #stk_satis_fiyati_3 type="text" class="form-control-number"
                                                                         placeholder="Satış Fiyatı 3">
                                                                 </div>
                                                             </div>
+
+                                                            <div class="form-group row">
+                                                                    <label class="col-sm-2 col-form-label">ÖTV Kodu</label>
+                                                                    <div class="col-sm-3">
+                                                                        <input id="stk_otv_kod" name="stk_otv_kod" formControlName="stk_otv_kod"
+                                                                        #stk_otv_kod type="text" class="form-control-number"
+                                                                            placeholder="">
+                                                                    </div>
+                                                                    <label class="col-sm-2 col-form-label">ÖTV Oranı</label>
+                                                                    <div class="col-sm-3">
+                                                                        <input id="stk_otv_orani" name="stk_otv_orani" formControlName="stk_otv_orani"
+                                                                        #stk_otv_orani type="text" class="form-control-number"
+                                                                            placeholder="">
+                                                                        <!--<span class="input-group-addon" id="basic-addon3">%</span>-->
+                                                                    </div>
+                                                            </div>
+    
 
 
 
@@ -325,35 +425,37 @@
                             </div>
                         </div>
                     </div>
-                    <button style="margin-right: inherit" type="button" class="btn btn-success waves-effect"
-                        data-toggle="modal" data-target="#Modal-tab"><i
-                            class="zmdi zmdi-minus-circle-outline"></i></button>
-                    <button style="margin-right: inherit" type="button" class="btn btn-info waves-effect"
-                        data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-edit"></i></button>
-                    <button style="margin-right: inherit" type="button" class="btn btn-warning waves-effect"
-                        data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-refresh"></i></button>
-                    <button style="margin-right: inherit" type="button" class="btn btn-danger waves-effect"
-                        data-toggle="modal" data-target="#Modal-tab"><i class="zmdi zmdi-print"></i></button>
-
-                    <div class="col-xs-12 col-sm-12 col-md-3" style="margin: auto; margin-right: initial">
-                        <div id="colum-rendr_filter" class="dataTables_filter"><label><input type="search"
-                                    class="form-control input-sm" placeholder="" aria-controls="colum-rendr"></label>
-                        </div>
-                    </div>
-                </div>
             </form>
 
-
+   
 
             <table id="colum-rendr" class="table table-striped table-bordered table-hover nowrap dataTable" role="grid"
                 aria-describedby="colum-rendr_info" style="color: black">
                 <thead>
                     <tr>
                         <td></td>
-                        <td>rec_id</td>
-                        <td>stk_kod</td>
-                        <td>stk_adi</td>
-                        <td>stk_tip</td>
+                        <td>Stok Kodu</td>
+                        <td>Stok Adı</td>
+                        <td>Stok Tipi</td>
+                        <td>Özel Kod 1</td>
+                        <td>Özel Kod 2</td>
+                        <td>Özel Kod 3</td>
+                        <td>Özel Kod 4</td>
+                        <td>Özel Kod 5</td>
+                        <td>Alış KDV Oranı</td>
+                        <td>Alış Fiyatı 1</td>
+                        <td>Alış Fiyatı 2</td>
+                        <td>Satış KDV Oranı</td>
+                        <td>Satış Fiyatı 1</td>
+                        <td>Satış Fiyatı 2</td>
+                        <td>Satış Fiyatı 3</td>
+                        <td>ÖTV Kodu</td>
+                        <td>ÖTV Oranı</td>
+                        <td>Asgari Miktar</td>
+                        <td>Azami Miktar</td>
+                        <td>Optimum Miktar</td>
+                        <td>Birim</td>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -362,10 +464,28 @@
                         <td class="sorting_1">
                             <!--            <button type="button" class="btn btn-primary btn-md waves-effect text-center" (click)="StokKartSec(item.rec_id)">Değiş</button> -->
                         </td>
-                        <td>{{item.rec_id}}</td>
                         <td>{{item.stk_kod}}</td>
                         <td>{{item.stk_adi}}</td>
                         <td>{{item.stk_tip}}</td>
+                        <td>{{item.stk_ozel_kod_1}}</td>
+                        <td>{{item.stk_ozel_kod_2}}</td>
+                        <td>{{item.stk_ozel_kod_3}}</td>
+                        <td>{{item.stk_ozel_kod_4}}</td>
+                        <td>{{item.stk_ozel_kod_5}}</td>
+                        <td>{{item.stk_alis_kdv_orani}}</td>
+                        <td>{{item.stk_alis_fiyati_1}}</td>
+                        <td>{{item.stk_alis_fiyati_2}}</td>
+                        <td>{{item.stk_satis_kdv_orani}}</td>
+                        <td>{{item.stk_satis_fiyati_1}}</td>
+                        <td>{{item.stk_satis_fiyati_2}}</td>
+                        <td>{{item.stk_satis_fiyati_3}}</td>
+                        <td>{{item.stk_otv_kod}}</td>
+                        <td>{{item.stk_otv_orani}}</td>
+                        <td>{{item.stk_en_az_miktar}}</td>
+                        <td>{{item.stk_en_cok_miktar}}</td>
+                        <td>{{item.stk_optimum_miktar}}</td>
+                        <td>{{item.stk_birim_ref}}</td>                       
+
                     </tr>
 
                 </tbody>

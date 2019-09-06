@@ -9707,7 +9707,7 @@ body[themebg-pattern="pattern3"] {
   background-image: url("../images/pattern3.jpg");
 }
 body[themebg-pattern="pattern4"] {
-  background-image: url("../images/pattern4.jpg");
+  background-color: #d5dae6;
 }
 body[themebg-pattern="pattern5"] {
   background-image: url("../images/pattern5.jpg");

@@ -24,6 +24,23 @@ export class StokKartlariComponent implements OnInit {
       stk_adi: new FormControl(),
       stk_tip: new FormControl(),
       stk_kod: new FormControl(),
+      stk_ozel_kod_1: new FormControl(),
+      stk_ozel_kod_2: new FormControl(),
+      stk_ozel_kod_3: new FormControl(),
+      stk_ozel_kod_4: new FormControl(),
+      stk_ozel_kod_5: new FormControl(),
+      stk_alis_fiyati_1: new FormControl(),
+      stk_alis_fiyati_2: new FormControl(),
+      stk_satis_fiyati_1: new FormControl(),
+      stk_satis_fiyati_2: new FormControl(),
+      stk_satis_fiyati_3: new FormControl(),
+      stk_alis_kdv_orani: new FormControl(),
+      stk_satis_kdv_orani: new FormControl(),
+      stk_otv_kod: new FormControl(),
+      stk_otv_orani: new FormControl(),
+      stk_en_az_miktar: new FormControl(),
+      stk_en_cok_miktar: new FormControl(),
+      stk_optimum_miktar: new FormControl(),
     });
 
   ngOnInit() {
@@ -39,7 +56,28 @@ export class StokKartlariComponent implements OnInit {
       });
   }
 
-  SaveStokKarti(stk_kod, stk_adi, stk_tip,) {
+  SaveStokKarti(
+                stk_kod, 
+                stk_adi, 
+                stk_tip, 
+                stk_ozel_kod_1, 
+                stk_ozel_kod_2, 
+                stk_ozel_kod_3, 
+                stk_ozel_kod_4,
+                stk_ozel_kod_5, 
+                stk_alis_fiyati_1, 
+                stk_alis_fiyati_2, 
+                stk_satis_fiyati_1, 
+                stk_satis_fiyati_2,
+                stk_satis_fiyati_3, 
+                stk_alis_kdv_orani, 
+                stk_satis_kdv_orani, 
+                stk_otv_kod, 
+                stk_otv_orani,
+                stk_en_az_miktar, 
+                stk_en_cok_miktar,
+                stk_optimum_miktar, 
+                stk_birim_ref) {
 
     var ok = '';
 
@@ -89,6 +127,24 @@ export class StokKartlariComponent implements OnInit {
           //stk.rec_date_updated = date;
           stk.rec_user_updated = 1;
           stk.rec_id = 0; //kayıt olduğu anlamına geliyor.
+          stk.stk_ozel_kod_1 = stk_ozel_kod_1;
+          stk.stk_ozel_kod_2 = stk_ozel_kod_2;
+          stk.stk_ozel_kod_3 = stk_ozel_kod_3;
+          stk.stk_ozel_kod_4 = stk_ozel_kod_4;
+          stk.stk_ozel_kod_5 = stk_ozel_kod_5;
+          stk.stk_alis_fiyati_1 = stk_alis_fiyati_1;
+          stk.stk_alis_fiyati_2 = stk_alis_fiyati_2;
+          stk.stk_satis_fiyati_1 = stk_satis_fiyati_1;
+          stk.stk_satis_fiyati_2 = stk_satis_fiyati_2;
+          stk.stk_satis_fiyati_3 = stk_satis_fiyati_3;
+          stk.stk_alis_kdv_orani = stk_alis_kdv_orani;
+          stk.stk_satis_kdv_orani = stk_satis_kdv_orani;
+          stk.stk_otv_kod = stk_otv_kod;
+          stk.stk_otv_orani = stk_otv_orani;
+          stk.stk_en_az_miktar = stk_en_az_miktar;
+          stk.stk_en_cok_miktar = stk_en_cok_miktar;
+          stk.stk_optimum_miktar = stk_optimum_miktar;
+          stk.stk_birim_ref = stk_birim_ref;
 
           this.stokservice.SaveStokKarti(stk).subscribe(data => {
             if (data == 'ok') {
